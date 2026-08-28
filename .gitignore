@@ -1,0 +1,6 @@
+node_modules
+.next
+out
+.env*.local
+data/articles.runtime.json
+.DS_Store
