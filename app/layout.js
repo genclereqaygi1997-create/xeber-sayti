@@ -1,16 +1,18 @@
-import { Inter } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+import { getSiteUrl, SITE_NAME } from "../lib/site";
 
 export const metadata = {
-  title: "Xəbər Portalı",
-  description: "Son xəbərlər, təhlillər və analitika bir yerdə.",
+  metadataBase: new URL(getSiteUrl()),
+  title: {
+    default: `${SITE_NAME} — Son xəbərlər, təhlil və analitika`,
+    template: `%s — ${SITE_NAME}`,
+  },
+  description: "Ölkə və dünya xəbərləri bir yerdə.",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="az" className={inter.variable}>
+    <html lang="az">
       <body className="bg-paper text-ink antialiased font-sans">
         {children}
       </body>

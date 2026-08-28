@@ -7,6 +7,10 @@ import ArticleCard, { formatRelative } from "../../components/ArticleCard";
 
 export const dynamic = "force-dynamic";
 
+export const metadata = {
+  alternates: { canonical: "/" },
+};
+
 function SectionHeading({ title, href }) {
   return (
     <div className="flex items-center justify-between mb-4">
