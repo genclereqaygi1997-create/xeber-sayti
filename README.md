@@ -58,10 +58,13 @@ Admin panelində "Yeni xəbər" formasında artıq kompüterinizdən şəkil se�
 
 1. Vercel dashboard → layihəniz → **Storage** tabı
 2. **Create Database** → **Blob**
-3. Yaradıb layihənizə qoşun (Postgres-də etdiyiniz kimi)
-4. **Deployments** → **Redeploy**
+3. Store yaradarkən **Access** seçimində mütləq **"Public"** seçin (default təklif olunan "Private" YOX — xəbər şəkilləri hamı üçün açıq olmalıdır, əks halda saytda görünmür)
+4. Yaradıb layihənizə qoşun (**Connect to Project** → layihənizi seçin, Postgres-də etdiyiniz kimi)
+5. **Deployments** → **Redeploy**
 
 Bundan sonra admin paneldəki "Kompüterdən şəkil seç" düyməsi işə düşəcək. Qoşulmayıbsa, sistem sizə aydın bir xəbərdarlıq göstərəcək və "Şəkil URL-i" sahəsindən əl ilə davam edə biləcəksiniz — sayt heç bir halda xarab olmur.
+
+**Texniki qeyd:** Vercel Blob indi default olaraq daha təhlükəsiz **OIDC** əsaslı autentifikasiya istifadə edir — store-u layihəyə qoşduqda `BLOB_STORE_ID` dəyişəni yaranır (köhnə statik `BLOB_READ_WRITE_TOKEN` artıq məcburi deyil, sistem hər ikisini dəstəkləyir). Əlavə bir tənzimləmə lazım deyil, `@vercel/blob` kitabxanası bunu avtomatik idarə edir.
 
 **Məhdudiyyətlər:** JPG/PNG/WEBP/GIF formatları, maksimum 8 MB.
 
